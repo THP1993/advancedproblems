@@ -28,7 +28,7 @@ return new Promise ( (resolve, reject) => {
 }
 
 async function main() {
-    const status = await getSubcriptionStatus ();
+    const status = await getSubscriptionStatus ();
     statusRef.innerHTML = status;
     console.log(getVideo(status))
 }
