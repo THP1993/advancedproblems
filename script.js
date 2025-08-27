@@ -3,11 +3,11 @@ async function firstSixIncomplete(completed){
     
 const result = await promise.json()
 
-const posts = result.filter (element => element.completed === completed)
+const todos = result.filter (element => element.completed === completed)
 .slice(0,6)
 
 
-console.log(posts)
+console.log(todos)
 
 console.log (result)
 }
