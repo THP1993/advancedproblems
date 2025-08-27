@@ -1,39 +1,14 @@
-const statusRef = document.querySelector(".status");
-
-function getSubscriptionStatus() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("VIP");
-
-        }, 2000);
-    });
+function showRating(rating) {
+  let ratings = "";
+  for (let i = 0; i < Math.floor(rating); ++i) {
+    ratings = ratings + "*";
+    if (i !== Math.floor(rating) - 1) {
+      ratings = ratings + " ";
+    }
+  }
+  if (Number.isInteger(rating)) {
+    ratings = ratings + ".";
+  }
+  return ratings;
 }
-
-
-
-function getVideo (subscriptionStatus) {
-return new Promise ( (resolve, reject) => {
-
- if (subscriptionStatus === "VIP") {
-    resolve("Show video")} 
-
- else if (subscriptionStatus === "FREE") {
-    resolve("show trailer") } 
-
-  else {
-    reject("no video")} 
- 
-} )
-
-}
-
-async function main() {
-    const status = await getSubscriptionStatus ();
-    statusRef.innerHTML = status;
-    console.log(getVideo(status))
-}
-
-main();
-
-
-
+console.log(showRating(4.5));
