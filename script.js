@@ -9,7 +9,7 @@ const todos = result.filter (element => element.completed === completed)
 
 console.log(todos)
 
-console.log (result)
+
 }
    
       
