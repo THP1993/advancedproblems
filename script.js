@@ -1,14 +1,19 @@
-function showRating(rating) {
-  let ratings = "";
-  for (let i = 0; i < Math.floor(rating); ++i) {
-    ratings = ratings + "*";
-    if (i !== Math.floor(rating) - 1) {
-      ratings = ratings + " ";
-    }
-  }
-  if (Number.isInteger(rating)) {
-    ratings = ratings + ".";
-  }
-  return ratings;
+async function firstSixIncomplete(completed){
+    const promise = await fetch ('https://jsonplaceholder.typicode.com/todos')
+    
+const result = await promise.json()
+
+const posts = result.filter (element => element.completed === completed)
+.slice(0,6)
+
+
+console.log(posts)
+
+console.log (result)
 }
-console.log(showRating(4.5));
+   
+      
+
+firstSixIncomplete(false)
+
+
